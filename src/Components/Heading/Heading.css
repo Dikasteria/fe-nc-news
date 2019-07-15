@@ -3,11 +3,11 @@
   grid-area: Heading;
   width: 100%;
   background-color: #3498db;
-  text-align: center;
-  position: relative;
-  position: fixed;
-  top: 0;
-  overflow: hidden;
+  /* text-align: center; */
+  /* position: relative; */
+  /* position: fixed; */
+  /* top: 0; */
+  /* overflow: hidden; */
 }
 
 h1 {

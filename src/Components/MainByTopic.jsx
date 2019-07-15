@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import "./Main.css";
-import * as api from "../Utils/utils";
+import * as api from "./Utils/utils";
 
-class Main extends Component {
+class MainByTopic extends Component {
   state = {
     articles: []
   };
+
   render() {
     const { articles } = this.state;
+    const { topic } = this.props.topic;
     return (
       <ul className="articles">
         {articles.map(article => {
@@ -27,9 +28,11 @@ class Main extends Component {
   }
 
   fetchArticles = () => {
-    api.getArticles().then(articles => {
+    const { topic } = this.props;
+    api.getArticles(topic).then(articles => {
       this.setState({ articles });
     });
   };
 }
-export default Main;
+
+export default MainByTopic;

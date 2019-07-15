@@ -1,8 +1,12 @@
 .Main {
   grid-area: Main;
-  text-align: center;
-  background-color: blue;
-  color: black;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-transform: uppercase;
+  overflow-y: scroll;
+  margin: -22px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: olivedrab;
 }

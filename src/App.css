@@ -3,7 +3,6 @@
   height: 100vw;
   width: 100vw;
   display: grid;
-  grid-template-columns: 2fr 3fr;
   grid-template-rows: 1fr 1fr 5fr 1fr;
   grid-template-areas:
     "Heading Heading"
@@ -11,4 +10,5 @@
     "Main Main"
     "Footer Footer";
   background-color: #808080;
+  list-style: none;
 }

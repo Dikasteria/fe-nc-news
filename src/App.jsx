@@ -4,8 +4,8 @@ import Heading from "./Components/Heading/Heading";
 import NavBar from "./Components/NavBar/NavBar";
 import Main from "./Components/Main/Main";
 import Footer from "./Components/Footer/Footer";
+import MainByTopic from "./Components/MainByTopic";
 import { Router } from "@reach/router";
-// import * as api from "./Components/Utils/utils";
 
 class App extends Component {
   render() {
@@ -13,7 +13,10 @@ class App extends Component {
       <div className="App">
         <Heading />
         <NavBar />
-        <Main />
+        <Router>
+          <Main path="/" />
+          <MainByTopic path="/topics/:topic" />
+        </Router>
         <Footer />
       </div>
     );
