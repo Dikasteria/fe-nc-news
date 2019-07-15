@@ -6,7 +6,7 @@ class NavBar extends Component {
   render() {
     return (
       <div className="NavBar">
-        <nav>HERE IS NAV</nav>
+        <nav>Please Click on One of the Following:</nav>
         <Link to="/">Home</Link>
         <Link to="/topics/:topic_id">Topic 1</Link>
         <Link to="/topics/:topic_id">Topic 2</Link>
