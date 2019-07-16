@@ -15,10 +15,10 @@ class ArticlePage extends Component {
         <h3>{article.body}</h3>
         <h3>Votes: {article.votes}</h3>
         <h3>Comment Count: {article.comment_count}</h3>
-        <div>
+        <div className="comments">
           {comments.map(comment => {
             return (
-              <li key="comment_id" className="comments">
+              <li key="comment_id" className="comment">
                 <h3>Comment: {comment.body}</h3>
                 <p>Author: {comment.author}</p>
                 <p>Votes: {comment.votes}</p>

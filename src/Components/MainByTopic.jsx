@@ -11,18 +11,31 @@ class MainByTopic extends Component {
     const { articles } = this.state;
 
     return (
-      <ul className="articles">
-        {articles.map(article => {
-          const article_id = article.article_id;
-          return (
-            <li key={article_id} className="article">
-              <h2>{article.title}</h2>
-              <p>{article.author}</p>
-              <Link to={`/articles/${article.article_id}`}>Read More</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <div>
+        <form>
+          <button type="submit" onClick={this.handleClick}>
+            Sort by Date Created
+          </button>
+          <button type="submit" onClick={this.handleClick}>
+            Sort by Comment Count
+          </button>
+          <button type="submit" onClick={this.handleClick}>
+            Sort by Votes
+          </button>
+        </form>
+        <ul className="articles">
+          {articles.map(article => {
+            const article_id = article.article_id;
+            return (
+              <li key={article_id} className="article">
+                <h2>{article.title}</h2>
+                <p>{article.author}</p>
+                <Link to={`/articles/${article.article_id}`}>Read More</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     );
   }
 
