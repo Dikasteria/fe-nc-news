@@ -4,22 +4,26 @@ import { Link } from "@reach/router";
 
 class MainByTopic extends Component {
   state = {
-    articles: []
+    articles: [],
+    filterBy: ""
   };
 
   render() {
     const { articles } = this.state;
-
     return (
       <div>
         <form>
-          <button type="submit" onClick={this.handleClick}>
+          <button type="submit" onClick={this.handleClick} value="created_at">
             Sort by Date Created
           </button>
-          <button type="submit" onClick={this.handleClick}>
+          <button
+            type="submit"
+            onClick={this.handleClick}
+            value="comment_count"
+          >
             Sort by Comment Count
           </button>
-          <button type="submit" onClick={this.handleClick}>
+          <button type="submit" onClick={this.handleClick} value="votes">
             Sort by Votes
           </button>
         </form>
@@ -54,6 +58,15 @@ class MainByTopic extends Component {
     if (this.props.topic !== prevProps.topic) {
       await this.fetchArticles();
     }
+  };
+
+  handleClick = event => {
+    event.preventDefault();
+    const { topic } = this.props;
+    const sort_by = event.target.value;
+    api.getArticles(topic, sort_by).then(articles => {
+      this.setState({ articles });
+    });
   };
 }
 
