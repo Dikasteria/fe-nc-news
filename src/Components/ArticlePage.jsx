@@ -3,15 +3,29 @@ import * as api from "./Utils/utils";
 
 class ArticlePage extends Component {
   state = {
-    article: {}
+    article: {},
+    comments: []
   };
   render() {
-    const { article } = this.state;
+    const { article, comments } = this.state;
 
     return (
       <div className="articles">
         <h2>{article.title}</h2>
-        <p>{article.body}</p>
+        <h3>{article.body}</h3>
+        <h3>Votes: {article.votes}</h3>
+        <h3>Comment Count: {article.comment_count}</h3>
+        <div>
+          {comments.map(comment => {
+            return (
+              <li key="comment_id" className="comments">
+                <h3>Comment: {comment.body}</h3>
+                <p>Author: {comment.author}</p>
+                <p>Votes: {comment.votes}</p>
+              </li>
+            );
+          })}
+        </div>
       </div>
     );
   }
@@ -19,6 +33,9 @@ class ArticlePage extends Component {
     const { article_id } = this.props;
     api.getArticle(article_id).then(article => {
       this.setState(article);
+    });
+    api.getComments(article_id).then(comments => {
+      this.setState(comments);
     });
   }
 }

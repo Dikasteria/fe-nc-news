@@ -11,5 +11,22 @@
 }
 
 .articles {
+  grid-area: books;
+  /* border: solid 1px pink; */
+  /* overflow-y: scroll; */
+  /* margin: -22px; */
   list-style: none;
+  /* padding: 0; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: olivedrab;
+}
+.article {
+  width: 28%;
+  border: solid 1px black;
+  background-color: aqua;
+  margin: 10px;
+  border-radius: 10px;
 }
