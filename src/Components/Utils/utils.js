@@ -14,3 +14,8 @@ export const getTopics = async () => {
   const { data } = await Axios.get(`${BASE_URL}/topics`);
   return data.topics;
 };
+
+export const getArticle = async article_id => {
+  const { data } = await Axios.get(`${BASE_URL}/articles/${article_id}`);
+  return data;
+};
