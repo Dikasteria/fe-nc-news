@@ -12,7 +12,9 @@ class NavBar extends Component {
     return (
       <div className="NavBar">
         <nav>Please Click on One of the Following:</nav>
-        <Link to="/">Home</Link>
+        <Link to="/" className="links">
+          Home
+        </Link>
         {topics.map(({ slug }) => {
           return (
             <Link to={`/topics/${slug}`} key={slug}>

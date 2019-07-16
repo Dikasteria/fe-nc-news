@@ -8,7 +8,6 @@ class MainByTopic extends Component {
 
   render() {
     const { articles } = this.state;
-    const { topic } = this.props.topic;
     return (
       <ul className="articles">
         {articles.map(article => {
@@ -32,6 +31,12 @@ class MainByTopic extends Component {
     api.getArticles(topic).then(articles => {
       this.setState({ articles });
     });
+  };
+
+  componentDidUpdate = async (prevProps, prevState) => {
+    if (this.props.topic !== prevProps.topic) {
+      await this.fetchArticles();
+    }
   };
 }
 

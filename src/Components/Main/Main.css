@@ -1,6 +1,5 @@
 .Main {
   grid-area: Main;
-  overflow-y: scroll;
   margin: -22px;
   list-style: none;
   padding: 0;
@@ -9,4 +8,8 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: olivedrab;
+}
+
+.articles {
+  list-style: none;
 }
