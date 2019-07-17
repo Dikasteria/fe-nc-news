@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "./Utils/utils";
 import AddComment from "./AddComment";
+import DeleteComment from "./DeleteComment";
 // import { async } from "q";
 
 class ArticlePage extends Component {
@@ -13,9 +14,10 @@ class ArticlePage extends Component {
     return (
       <div className="articles">
         <h2>{article.title}</h2>
-        <h3>{article.body}</h3>
-        <h3>Votes: {article.votes}</h3>
-        <h3>Comment Count: {article.comment_count}</h3>
+        <p>{article.body}</p>
+        <p>Votes: {article.votes}</p>
+        <p>Comment Count: {article.comment_count}</p>
+
         <div className="comments">
           <AddComment
             key="addComment"
@@ -26,9 +28,13 @@ class ArticlePage extends Component {
           {comments.map(comment => {
             return (
               <li key="comment_id" className="comment">
-                <h3>Comment: {comment.body}</h3>
-                <h4>Author: {comment.author}</h4>
+                <p>Comment: {comment.body}</p>
+                <p>Author: {comment.author}</p>
                 <p>Votes: {comment.votes}</p>
+                <DeleteComment
+                  comment_id={comment.comment_id}
+                  removeComment={this.removeComment}
+                />
               </li>
             );
           })}
@@ -38,8 +44,10 @@ class ArticlePage extends Component {
   }
 
   updateComments = comment => {
-    this.state.article.comment_count++;
-    this.setState({ comments: [comment, ...this.state.comments] });
+    this.setState(state => {
+      state.article.comment_count++;
+      return { comments: [comment, ...this.state.comments] };
+    });
   };
 
   componentDidMount() {
@@ -51,6 +59,12 @@ class ArticlePage extends Component {
       this.setState(comments);
     });
   }
+  removeComment = () => {
+    this.setState(state => {
+      state.article.comment_count--;
+      return { comments: [...this.state.comments.slice(1)] };
+    });
+  };
 }
 
 export default ArticlePage;

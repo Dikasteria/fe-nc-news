@@ -11,7 +11,7 @@
 }
 
 .articles {
-  grid-area: books;
+  /* grid-area: Main; */
   /* border: solid 1px pink; */
   /* overflow-y: scroll; */
   /* margin: -22px; */
@@ -32,12 +32,19 @@
 }
 
 /* .comment {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  grid-template-areas: "vote" "comment" "vote";
-}
+  border: solid 1px pink;
+  overflow-y: scroll;
+  margin: -22px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #8fbc8f;
+} */
 
-.comment h3 {
+/* .comment h3 {
   grid-area: comment;
 }
 .comment p {
@@ -47,3 +54,13 @@
 comment a {
   grid-area: comment;
 } */
+.comment {
+  width: 100%;
+  border: solid 1px black;
+  background-color: lightgrey;
+  margin: 10px;
+  border-radius: 10px;
+}
+button:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

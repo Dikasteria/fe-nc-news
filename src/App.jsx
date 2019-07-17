@@ -8,6 +8,7 @@ import MainByTopic from "./Components/MainByTopic";
 import ArticlePage from "./Components/ArticlePage";
 import { Router } from "@reach/router";
 import AddComment from "./Components/AddComment";
+import DeleteComment from "./Components/DeleteComment";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <MainByTopic path="/topics/:topic" />
           <ArticlePage path="/articles/:article_id" />
           <AddComment path="/articles/:article_id/newComment" />
+          <DeleteComment path="/articles/:article_id/comments" />
         </Router>
         <Footer />
       </div>
