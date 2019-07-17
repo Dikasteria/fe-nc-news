@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "./Utils/utils";
 import AddComment from "./AddComment";
-import { async } from "q";
+// import { async } from "q";
 
 class ArticlePage extends Component {
   state = {
@@ -21,12 +21,13 @@ class ArticlePage extends Component {
             key="addComment"
             updateComments={this.updateComments}
             id={article.article_id}
+            className="addcommentbar"
           />
           {comments.map(comment => {
             return (
               <li key="comment_id" className="comment">
                 <h3>Comment: {comment.body}</h3>
-                <p>Author: {comment.author}</p>
+                <h4>Author: {comment.author}</h4>
                 <p>Votes: {comment.votes}</p>
               </li>
             );
@@ -37,6 +38,7 @@ class ArticlePage extends Component {
   }
 
   updateComments = comment => {
+    this.state.article.comment_count++;
     this.setState({ comments: [comment, ...this.state.comments] });
   };
 

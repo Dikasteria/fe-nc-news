@@ -28,16 +28,17 @@ class AddComment extends Component {
     const { id, value } = event.target;
     this.setState({ [id]: value });
   };
+
   handleSubmit = event => {
     event.preventDefault();
     const { body } = this.state;
     const { id } = this.props;
     const author = this.state.author;
-
     api
       .postComment(author, body, id)
       .then(({ comment }) => {
         this.props.updateComments(comment);
+        this.setState({ body: "" });
       })
       .catch(err => {
         console.log(err.response);

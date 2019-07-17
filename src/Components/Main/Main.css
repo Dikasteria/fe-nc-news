@@ -30,3 +30,20 @@
   margin: 10px;
   border-radius: 10px;
 }
+
+/* .comment {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-areas: "vote" "comment" "vote";
+}
+
+.comment h3 {
+  grid-area: comment;
+}
+.comment p {
+  grid-area: comment;
+}
+
+comment a {
+  grid-area: comment;
+} */
