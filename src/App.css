@@ -5,10 +5,10 @@
   display: grid;
   grid-template-rows: 1fr 1fr 5fr 1fr;
   grid-template-areas:
-    "Heading Heading"
-    "NavBar NavBar"
-    "Main Main"
-    "Footer Footer";
+    "Heading"
+    "NavBar"
+    "Main"
+    "Footer";
   background-color: #808080;
   list-style: none;
 }

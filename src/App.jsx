@@ -7,6 +7,7 @@ import Footer from "./Components/Footer/Footer";
 import MainByTopic from "./Components/MainByTopic";
 import ArticlePage from "./Components/ArticlePage";
 import { Router } from "@reach/router";
+import AddComment from "./Components/AddComment";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Main path="/" />
           <MainByTopic path="/topics/:topic" />
           <ArticlePage path="/articles/:article_id" />
+          <AddComment path="/comments/newComment" />
         </Router>
         <Footer />
       </div>

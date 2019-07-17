@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "./Utils/utils";
+import AddComment from "./AddComment";
 
 class ArticlePage extends Component {
   state = {
@@ -8,7 +9,6 @@ class ArticlePage extends Component {
   };
   render() {
     const { article, comments } = this.state;
-
     return (
       <div className="articles">
         <h2>{article.title}</h2>
@@ -16,6 +16,7 @@ class ArticlePage extends Component {
         <h3>Votes: {article.votes}</h3>
         <h3>Comment Count: {article.comment_count}</h3>
         <div className="comments">
+          <AddComment key="addComment" id={article.article_id} />
           {comments.map(comment => {
             return (
               <li key="comment_id" className="comment">

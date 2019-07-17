@@ -5,7 +5,7 @@ import { Link } from "@reach/router";
 class MainByTopic extends Component {
   state = {
     articles: [],
-    filterBy: ""
+    sorted: "asc"
   };
 
   render() {
