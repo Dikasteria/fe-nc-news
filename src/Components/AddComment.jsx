@@ -32,15 +32,15 @@ class AddComment extends Component {
     event.preventDefault();
     const { body } = this.state;
     const { id } = this.props;
-    console.log(body);
     const author = this.state.author;
+
     api
-      .postComment(body, id, author)
-      .then(result => {
-        console.log(result);
+      .postComment(author, body, id)
+      .then(({ comment }) => {
+        this.props.updateComments(comment);
       })
       .catch(err => {
-        console.log(err);
+        console.log(err.response);
       });
   };
 }

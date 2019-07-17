@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "./Utils/utils";
 import AddComment from "./AddComment";
+import { async } from "q";
 
 class ArticlePage extends Component {
   state = {
@@ -16,7 +17,11 @@ class ArticlePage extends Component {
         <h3>Votes: {article.votes}</h3>
         <h3>Comment Count: {article.comment_count}</h3>
         <div className="comments">
-          <AddComment key="addComment" id={article.article_id} />
+          <AddComment
+            key="addComment"
+            updateComments={this.updateComments}
+            id={article.article_id}
+          />
           {comments.map(comment => {
             return (
               <li key="comment_id" className="comment">
@@ -30,6 +35,11 @@ class ArticlePage extends Component {
       </div>
     );
   }
+
+  updateComments = comment => {
+    this.setState({ comments: [comment, ...this.state.comments] });
+  };
+
   componentDidMount() {
     const { article_id } = this.props;
     api.getArticle(article_id).then(article => {

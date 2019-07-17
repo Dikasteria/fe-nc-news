@@ -19,7 +19,7 @@ class App extends Component {
           <Main path="/" />
           <MainByTopic path="/topics/:topic" />
           <ArticlePage path="/articles/:article_id" />
-          <AddComment path="/comments/newComment" />
+          <AddComment path="/articles/:article_id/newComment" />
         </Router>
         <Footer />
       </div>
