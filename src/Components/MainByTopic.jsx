@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "./Utils/utils";
 import { Link } from "@reach/router";
+import Voting from "./Voting";
 
 class MainByTopic extends Component {
   state = {
@@ -35,6 +36,12 @@ class MainByTopic extends Component {
                 <h2>{article.title}</h2>
                 <p>{article.author}</p>
                 <Link to={`/articles/${article.article_id}`}>Read More</Link>
+                <Voting
+                  key="votes"
+                  votes={article.votes}
+                  section="articles"
+                  comment_id={article.article_id}
+                />
               </li>
             );
           })}

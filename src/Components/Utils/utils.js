@@ -1,4 +1,5 @@
 import axios from "axios";
+import Axios from "axios";
 
 const BASE_URL = "https://rjh-news.herokuapp.com/api";
 
@@ -41,5 +42,13 @@ export const postComment = async (username, body, article_id) => {
 
 export const deleteComment = async comment_id => {
   const { data } = await axios.delete(`${BASE_URL}/comments/${comment_id}`);
+  return data;
+};
+
+export const vote = async (id, inc_votes, section) => {
+  const { data } = await Axios.patch(`${BASE_URL}/${section}/${id}`, {
+    inc_votes,
+    section
+  });
   return data;
 };

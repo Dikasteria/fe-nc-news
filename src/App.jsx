@@ -9,6 +9,7 @@ import ArticlePage from "./Components/ArticlePage";
 import { Router } from "@reach/router";
 import AddComment from "./Components/AddComment";
 import DeleteComment from "./Components/DeleteComment";
+import Voting from "./Components/Voting";
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
           <ArticlePage path="/articles/:article_id" />
           <AddComment path="/articles/:article_id/newComment" />
           <DeleteComment path="/articles/:article_id/comments" />
+          <Voting path="/articles/:article_id/comments" />
         </Router>
         <Footer />
       </div>

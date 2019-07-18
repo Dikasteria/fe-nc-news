@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "./Utils/utils";
 import AddComment from "./AddComment";
 import DeleteComment from "./DeleteComment";
+import Voting from "./Voting";
 // import { async } from "q";
 
 class ArticlePage extends Component {
@@ -30,10 +31,16 @@ class ArticlePage extends Component {
               <li key="comment_id" className="comment">
                 <p>Comment: {comment.body}</p>
                 <p>Author: {comment.author}</p>
-                <p>Votes: {comment.votes}</p>
+                {/* <p>Votes: {comment.votes}</p> */}
                 <DeleteComment
                   comment_id={comment.comment_id}
                   removeComment={this.removeComment}
+                />
+                <Voting
+                  key="votes"
+                  votes={comment.votes}
+                  section="comments"
+                  comment_id={comment.comment_id}
                 />
               </li>
             );
