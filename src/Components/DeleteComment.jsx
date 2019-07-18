@@ -19,7 +19,7 @@ class DeleteComment extends Component {
     const { comment_id } = this.props;
     api
       .deleteComment(comment_id)
-      .then(this.props.removeComment())
+      .then(this.props.removeComment(comment_id))
       .catch(err => {
         console.log(err);
       });

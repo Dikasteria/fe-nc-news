@@ -18,7 +18,6 @@ class ArticlePage extends Component {
         <p>{article.body}</p>
         <p>Votes: {article.votes}</p>
         <p>Comment Count: {article.comment_count}</p>
-
         <div className="comments">
           <AddComment
             key="addComment"
@@ -31,7 +30,7 @@ class ArticlePage extends Component {
               <li key="comment_id" className="comment">
                 <p>Comment: {comment.body}</p>
                 <p>Author: {comment.author}</p>
-                {/* <p>Votes: {comment.votes}</p> */}
+
                 <DeleteComment
                   comment_id={comment.comment_id}
                   removeComment={this.removeComment}
@@ -66,10 +65,16 @@ class ArticlePage extends Component {
       this.setState(comments);
     });
   }
-  removeComment = () => {
+  removeComment = comment_id => {
     this.setState(state => {
       state.article.comment_count--;
-      return { comments: [...this.state.comments.slice(1)] };
+      return {
+        comments: [
+          ...this.state.comments.filter(ele => {
+            if (ele.comment_id !== comment_id) return ele;
+          })
+        ]
+      };
     });
   };
 }

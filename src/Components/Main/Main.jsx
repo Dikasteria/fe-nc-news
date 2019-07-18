@@ -6,14 +6,20 @@ import Voting from "../Voting";
 
 class Main extends Component {
   state = {
-    articles: []
+    articles: [],
+    sorted_by: "asc"
   };
   render() {
     const { articles } = this.state;
     return (
       <div>
         <form>
-          <button type="submit" onClick={this.handleClick} value="created_at">
+          <button
+            className="button"
+            type="submit"
+            onClick={this.handleClick}
+            value="created_at"
+          >
             Sort by Date Created
           </button>
           <button

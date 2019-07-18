@@ -8,20 +8,19 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: olivedrab;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .articles {
-  /* grid-area: Main; */
-  /* border: solid 1px pink; */
-  /* overflow-y: scroll; */
-  /* margin: -22px; */
   list-style: none;
-  /* padding: 0; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: #8fbc8f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .article {
   width: 100%;
@@ -29,38 +28,20 @@
   background-color: lavenderblush;
   margin: 10px;
   border-radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-/* .comment {
-  border: solid 1px pink;
-  overflow-y: scroll;
-  margin: -22px;
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  background-color: #8fbc8f;
-} */
-
-/* .comment h3 {
-  grid-area: comment;
-}
-.comment p {
-  grid-area: comment;
-}
-
-comment a {
-  grid-area: comment;
-} */
 .comment {
   width: 100%;
   border: solid 1px black;
   background-color: lightgrey;
   margin: 10px;
   border-radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
 button:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

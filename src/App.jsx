@@ -10,6 +10,7 @@ import { Router } from "@reach/router";
 import AddComment from "./Components/AddComment";
 import DeleteComment from "./Components/DeleteComment";
 import Voting from "./Components/Voting";
+import Error from "./Components/Error";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
           <AddComment path="/articles/:article_id/newComment" />
           <DeleteComment path="/articles/:article_id/comments" />
           <Voting path="/articles/:article_id/comments" />
+          <Error default path="/error" />
         </Router>
         <Footer />
       </div>

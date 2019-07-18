@@ -1,8 +1,12 @@
 .Footer {
   grid-area: Footer;
   text-align: center;
-  background-color: tan;
+  background-color: lightblue;
   color: black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-transform: uppercase;
+}
+
+.links a {
+  color: black;
 }
