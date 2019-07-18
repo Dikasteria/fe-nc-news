@@ -1,12 +1,10 @@
 import axios from "axios";
-import Axios from "axios";
 
 const BASE_URL = "https://rjh-news.herokuapp.com/api";
 
-export const getArticles = async (topic, sort_by) => {
-  // can also add sort_by and order etc as arguments
+export const getArticles = async (topic, sort_by, order_by) => {
   const { data } = await axios.get(`${BASE_URL}/articles`, {
-    params: { topic, sort_by }
+    params: { topic, sort_by, order_by }
   });
   return data.articles;
 };
@@ -46,7 +44,7 @@ export const deleteComment = async comment_id => {
 };
 
 export const vote = async (id, inc_votes, section) => {
-  const { data } = await Axios.patch(`${BASE_URL}/${section}/${id}`, {
+  const { data } = await axios.patch(`${BASE_URL}/${section}/${id}`, {
     inc_votes,
     section
   });

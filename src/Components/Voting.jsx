@@ -11,6 +11,7 @@ class Voting extends Component {
     return (
       <div>
         <button
+          disabled={voteChange === 1}
           onClick={() => {
             this.vote(1);
           }}
@@ -19,6 +20,7 @@ class Voting extends Component {
         </button>
         <p>Votes: {votes + voteChange}</p>
         <button
+          disabled={voteChange === -1}
           onClick={() => {
             this.vote(-1);
           }}
@@ -29,12 +31,17 @@ class Voting extends Component {
     );
   }
   vote = increment => {
-    const { comment_id, section } = this.props;
-    api.vote(comment_id, increment, section).then(updatedComment => {
+    const { id, section } = this.props;
+    api.vote(id, increment, section).then(updatedComment => {
       this.setState(state => ({
         voteChange: state.voteChange + increment
       }));
     });
+  };
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevProps.votes !== this.props.votes) {
+      this.setState({ voteChange: 0 });
+    }
   };
 }
 

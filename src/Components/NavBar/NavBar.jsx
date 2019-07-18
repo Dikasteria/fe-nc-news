@@ -11,7 +11,6 @@ class NavBar extends Component {
     const { topics } = this.state;
     return (
       <div className="NavBar">
-        <nav>Please Click on One of the Following:</nav>
         <Link to="/" className="links">
           Home
         </Link>

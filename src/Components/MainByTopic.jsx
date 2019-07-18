@@ -13,21 +13,17 @@ class MainByTopic extends Component {
     const { articles } = this.state;
     return (
       <div>
-        <form>
-          <button type="submit" onClick={this.handleClick} value="created_at">
+        <section>
+          <button onClick={this.handleClick} value="created_at">
             Sort by Date Created
           </button>
-          <button
-            type="submit"
-            onClick={this.handleClick}
-            value="comment_count"
-          >
+          <button onClick={this.handleClick} value="comment_count">
             Sort by Comment Count
           </button>
-          <button type="submit" onClick={this.handleClick} value="votes">
+          <button onClick={this.handleClick} value="votes">
             Sort by Votes
           </button>
-        </form>
+        </section>
         <ul className="articles">
           {articles.map(article => {
             const article_id = article.article_id;
@@ -40,7 +36,7 @@ class MainByTopic extends Component {
                   key="votes"
                   votes={article.votes}
                   section="articles"
-                  comment_id={article.article_id}
+                  id={article.article_id}
                 />
               </li>
             );
@@ -68,7 +64,6 @@ class MainByTopic extends Component {
   };
 
   handleClick = event => {
-    event.preventDefault();
     const { topic } = this.props;
     const sort_by = event.target.value;
     api.getArticles(topic, sort_by).then(articles => {

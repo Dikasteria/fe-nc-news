@@ -7,7 +7,7 @@ import Voting from "../Voting";
 class Main extends Component {
   state = {
     articles: [],
-    sorted_by: "asc"
+    order_by: "desc"
   };
   render() {
     const { articles } = this.state;

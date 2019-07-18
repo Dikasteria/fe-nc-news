@@ -39,7 +39,7 @@ class ArticlePage extends Component {
                   key="votes"
                   votes={comment.votes}
                   section="comments"
-                  comment_id={comment.comment_id}
+                  id={comment.comment_id}
                 />
               </li>
             );
