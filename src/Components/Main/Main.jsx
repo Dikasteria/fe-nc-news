@@ -13,7 +13,15 @@ class Main extends Component {
     const { articles } = this.state;
     return (
       <div className="article_display">
-        <section className="sortbuttons">
+        <div class="dropdown">
+          <button class="dropbtn">Sort By...</button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        {/* <section className="sortbuttons">
           <button
             className="sort_button"
             type="submit"
@@ -38,7 +46,7 @@ class Main extends Component {
           >
             Sort by Votes
           </button>
-        </section>
+        </section> */}
         <ul className="articles">
           {articles.map(article => {
             return (
