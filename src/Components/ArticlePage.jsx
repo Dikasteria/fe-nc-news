@@ -13,11 +13,12 @@ class ArticlePage extends Component {
   render() {
     const { article, comments } = this.state;
     return (
-      <div className="articles">
+      <div className="article">
         <h2>{article.title}</h2>
         <p>{article.body}</p>
         <p>Votes: {article.votes}</p>
         <p>Comment Count: {article.comment_count}</p>
+
         <div className="comments">
           <AddComment
             key="addComment"
@@ -29,8 +30,8 @@ class ArticlePage extends Component {
             return (
               <li key="comment_id" className="comment">
                 <p>Comment: {comment.body}</p>
-                <p>Author: {comment.author}</p>
-
+                <c>Author: {comment.author}</c>
+                <br />
                 <DeleteComment
                   comment_id={comment.comment_id}
                   removeComment={this.removeComment}

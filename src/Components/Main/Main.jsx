@@ -7,13 +7,13 @@ import Voting from "../Voting";
 class Main extends Component {
   state = {
     articles: [],
-    order_by: "desc"
+    order_by: "asc"
   };
   render() {
     const { articles } = this.state;
     return (
-      <div>
-        <form>
+      <div className="article_display">
+        <section className="sortbuttons">
           <button
             className="button"
             type="submit"
@@ -32,8 +32,7 @@ class Main extends Component {
           <button type="submit" onClick={this.handleClick} value="votes">
             Sort by Votes
           </button>
-        </form>
-
+        </section>
         <ul className="articles">
           {articles.map(article => {
             return (
