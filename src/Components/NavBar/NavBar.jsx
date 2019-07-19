@@ -12,6 +12,7 @@ class NavBar extends Component {
     return (
       <div className="NavBar">
         <Link to="/" className="links">
+          <i class="fas fa-futbol" />
           Home
         </Link>
         {topics.map(({ slug }) => {

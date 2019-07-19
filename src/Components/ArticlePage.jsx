@@ -13,7 +13,7 @@ class ArticlePage extends Component {
   render() {
     const { article, comments } = this.state;
     return (
-      <div className="article">
+      <div className="single_article">
         <h2>{article.title}</h2>
         <p>{article.body}</p>
         <p>Votes: {article.votes}</p>

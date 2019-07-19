@@ -1,15 +1,13 @@
 .App {
-  text-align: center;
   height: 100vw;
   width: 100vw;
   display: grid;
-  grid-template-rows: 1fr 1fr 5fr 1fr;
+  grid-template-rows: 4fr 1fr 5fr 25fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   grid-template-areas:
     "Heading"
     "NavBar"
     "Main"
     "Footer";
-  background-color: #3498db;
-  list-style: none;
-  margin: 0;
 }

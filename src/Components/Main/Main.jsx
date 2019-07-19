@@ -15,7 +15,7 @@ class Main extends Component {
       <div className="article_display">
         <section className="sortbuttons">
           <button
-            className="button"
+            className="sort_button"
             type="submit"
             onClick={this.handleClick}
             value="created_at"
@@ -23,13 +23,19 @@ class Main extends Component {
             Sort by Date Created
           </button>
           <button
+            className="sort_button"
             type="submit"
             onClick={this.handleClick}
             value="comment_count"
           >
             Sort by Comment Count
           </button>
-          <button type="submit" onClick={this.handleClick} value="votes">
+          <button
+            className="sort_button"
+            type="submit"
+            onClick={this.handleClick}
+            value="votes"
+          >
             Sort by Votes
           </button>
         </section>

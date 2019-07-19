@@ -2,7 +2,11 @@ import React from "react";
 import "./Heading.css";
 
 const Heading = () => {
-  return <h1 className="Heading"> NORTHCODERS NEWS </h1>;
+  return (
+    <div className="Heading">
+      <h1 className="Title"> NORTHCODERS NEWS </h1>;
+    </div>
+  );
 };
 
 export default Heading;

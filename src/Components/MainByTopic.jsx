@@ -12,15 +12,27 @@ class MainByTopic extends Component {
   render() {
     const { articles } = this.state;
     return (
-      <div>
-        <section>
-          <button onClick={this.handleClick} value="created_at">
+      <div className="article_display">
+        <section className="sortbuttons">
+          <button
+            className="sort_button"
+            onClick={this.handleClick}
+            value="created_at"
+          >
             Sort by Date Created
           </button>
-          <button onClick={this.handleClick} value="comment_count">
+          <button
+            className="sort_button"
+            onClick={this.handleClick}
+            value="comment_count"
+          >
             Sort by Comment Count
           </button>
-          <button onClick={this.handleClick} value="votes">
+          <button
+            className="sort_button"
+            onClick={this.handleClick}
+            value="votes"
+          >
             Sort by Votes
           </button>
         </section>
