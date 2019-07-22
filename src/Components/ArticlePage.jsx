@@ -14,33 +14,32 @@ class ArticlePage extends Component {
     const { article, comments } = this.state;
     return (
       <div className="single_article">
-        <h2>{article.title}</h2>
-        <p>{article.body}</p>
-        <p>Votes: {article.votes}</p>
-        <p>Comment Count: {article.comment_count}</p>
+        <h2 className="articleTitle">{article.title}</h2>
+        <p className="articleDetails">{article.body}</p>
+        <p className="articleInfo">Votes: {article.votes}</p>
+        <p className="articleInfo">Comment Count: {article.comment_count}</p>
+        <AddComment
+          key="addComment"
+          updateComments={this.updateComments}
+          id={article.article_id}
+        />
 
         <div className="comments">
-          <AddComment
-            key="addComment"
-            updateComments={this.updateComments}
-            id={article.article_id}
-            className="addcommentbar"
-          />
           {comments.map(comment => {
             return (
               <li key="comment_id" className="comment">
                 <p>Comment: {comment.body}</p>
-                <c>Author: {comment.author}</c>
+                <p>Author: {comment.author}</p>
                 <br />
-                <DeleteComment
-                  comment_id={comment.comment_id}
-                  removeComment={this.removeComment}
-                />
                 <Voting
                   key="votes"
                   votes={comment.votes}
                   section="comments"
                   id={comment.comment_id}
+                />
+                <DeleteComment
+                  comment_id={comment.comment_id}
+                  removeComment={this.removeComment}
                 />
               </li>
             );
@@ -72,7 +71,7 @@ class ArticlePage extends Component {
       return {
         comments: [
           ...this.state.comments.filter(ele => {
-            if (ele.comment_id !== comment_id) return ele;
+            return ele.comment_id !== comment_id;
           })
         ]
       };

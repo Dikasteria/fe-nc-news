@@ -2,8 +2,7 @@
   height: 100vw;
   width: 100vw;
   display: grid;
-  grid-template-rows: 4fr 1fr 5fr 25fr;
-  grid-column-gap: 0px;
+  grid-template-rows: 4fr 1fr 5fr 2fr;
   grid-row-gap: 0px;
   grid-template-areas:
     "Heading"

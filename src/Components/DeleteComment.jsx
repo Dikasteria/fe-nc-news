@@ -8,7 +8,7 @@ class DeleteComment extends Component {
   render() {
     return (
       <div>
-        <button type="submit" onClick={this.handleClick}>
+        <button className="delButton" type="submit" onClick={this.handleClick}>
           Delete Comment
         </button>
       </div>

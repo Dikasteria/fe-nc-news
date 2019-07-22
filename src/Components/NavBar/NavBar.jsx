@@ -8,7 +8,6 @@ class NavBar extends Component {
     topics: []
   };
   render() {
-    const { topics } = this.state;
     return (
       <div className="NavBar">
         <Link to="/" className="links">

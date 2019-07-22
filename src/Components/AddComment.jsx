@@ -11,15 +11,21 @@ class AddComment extends Component {
     const { body } = this.state;
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="addcommentbar" onSubmit={this.handleSubmit}>
           <label htmlFor="body" /> New Comment:
-          <input
+          <br />
+          <textarea
             type="text"
             id="body"
             value={body}
             onChange={this.handleChange}
+            cols="30"
+            rows="5"
           />
-          <button type="submit">Submit</button>
+          <br />
+          <button className="submitButton" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );

@@ -3,16 +3,20 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="Footer">
-      <div>Additional Info</div>
-      <a className="hyper" href="https://github.com/Dikasteria/fe-nc-news">
-        Front-End GitHub Repo
-      </a>
-      ;
-      <a className="hyper" href="https://github.com/Dikasteria/NC-News">
-        Back-End GitHub Repo
-      </a>
-      <a>LINK TO README HERE</a>
+    <footer>
+      <div className="FootInfo">
+        <h2 className="Title">Additional Info</h2>
+        <a className="hyper1" href="https://github.com/Dikasteria/fe-nc-news">
+          Front-End
+          <i class="fab fa-github" />
+        </a>
+
+        <a className="hyper2" href="https://github.com/Dikasteria/NC-News">
+          Back-End
+          <i class="fab fa-github" />
+        </a>
+        <a className="ReadMe">LINK TO README HERE</a>
+      </div>
     </footer>
   );
 };

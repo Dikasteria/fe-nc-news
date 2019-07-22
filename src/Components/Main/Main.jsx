@@ -13,15 +13,7 @@ class Main extends Component {
     const { articles } = this.state;
     return (
       <div className="article_display">
-        <div class="dropdown">
-          <button class="dropbtn">Sort By...</button>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
-        {/* <section className="sortbuttons">
+        <section className="sortbuttons">
           <button
             className="sort_button"
             type="submit"
@@ -46,19 +38,26 @@ class Main extends Component {
           >
             Sort by Votes
           </button>
-        </section> */}
+        </section>
         <ul className="articles">
           {articles.map(article => {
             return (
               <li key="article_id" className="article">
                 <h2>{article.title}</h2>
                 <p>{article.author}</p>
-                <Link to={`/articles/${article.article_id}`}>Read More</Link>
+                <p>{article.body.slice(0, 250)}</p>
+                <Link
+                  className="artLink"
+                  to={`/articles/${article.article_id}`}
+                >
+                  Read More
+                </Link>
+                <br />
                 <Voting
                   key="votes"
                   votes={article.votes}
                   section="articles"
-                  comment_id={article.article_id}
+                  id={article.article_id}
                 />
               </li>
             );
