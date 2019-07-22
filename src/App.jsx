@@ -12,25 +12,23 @@ import DeleteComment from "./Components/DeleteComment";
 import Voting from "./Components/Voting";
 import Error from "./Components/Error";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Heading />
-        <NavBar />
-        <Router>
-          <Main path="/" />
-          <MainByTopic path="/topics/:topic" />
-          <ArticlePage path="/articles/:article_id" />
-          <AddComment path="/articles/:article_id/newComment" />
-          <DeleteComment path="/articles/:article_id/comments" />
-          <Voting path="/articles/:article_id/comments" />
-          <Error default path="/error" />
-        </Router>
-        <Footer />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <Heading />
+      <NavBar />
+      <Router>
+        <Main path="/" />
+        <MainByTopic path="/topics/:topic" />
+        <ArticlePage path="/articles/:article_id" />
+        {/* <AddComment path="/articles/:article_id/newComment" /> */}
+        {/* <DeleteComment path="/articles/:article_id/comments" /> */}
+        {/* <Voting path="/articles/:article_id/comments" /> */}
+        <Error default path="/error" />
+      </Router>
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

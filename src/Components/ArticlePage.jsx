@@ -16,7 +16,10 @@ class ArticlePage extends Component {
       <div className="single_article">
         <h2 className="articleTitle">{article.title}</h2>
         <p className="articleDetails">{article.body}</p>
-        <p className="articleInfo">Votes: {article.votes}</p>
+        <p className="articleInfo">
+          {" "}
+          <i class="fas fa-poll fa-lg" /> {article.votes}
+        </p>
         <p className="articleInfo">
           <i class="far fa-comments fa-lg" />
           {article.comment_count}
