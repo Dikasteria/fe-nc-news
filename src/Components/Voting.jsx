@@ -16,23 +16,24 @@ class Voting extends Component {
             this.vote(1);
           }}
         >
-          +
+          <i class="fas fa-arrow-alt-circle-up" />
         </button>
-        <p>Votes: {votes + voteChange}</p>
+        <p>
+          <i class="fas fa-poll fa-lg" /> {votes + voteChange}
+        </p>
         <button
           disabled={voteChange === -1}
           onClick={() => {
             this.vote(-1);
           }}
         >
-          -
+          <i class="fas fa-arrow-circle-down" />
         </button>
       </div>
     );
   }
   vote = increment => {
     const { id, section } = this.props;
-    console.log(id, section);
     api.vote(id, increment, section).then(updatedComment => {
       this.setState(state => ({
         voteChange: state.voteChange + increment

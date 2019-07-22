@@ -19,11 +19,15 @@ class AddComment extends Component {
             id="body"
             value={body}
             onChange={this.handleChange}
-            cols="30"
+            cols="75"
             rows="5"
           />
           <br />
-          <button className="submitButton" type="submit">
+          <button
+            disabled={body.length < 4}
+            className="submitButton"
+            type="submit"
+          >
             Submit
           </button>
         </form>
@@ -40,6 +44,7 @@ class AddComment extends Component {
     const { body } = this.state;
     const { id } = this.props;
     const author = this.state.author;
+
     api
       .postComment(author, body, id)
       .then(({ comment }) => {

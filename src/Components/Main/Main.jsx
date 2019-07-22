@@ -7,10 +7,19 @@ import Voting from "../Voting";
 class Main extends Component {
   state = {
     articles: [],
-    order_by: "asc"
+    order_by: "asc",
+    isLoading: true
   };
   render() {
-    const { articles } = this.state;
+    const { articles, isLoading } = this.state;
+    if (isLoading) {
+      return (
+        <img
+          src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2015/05/InternetSlowdown_Day.gif"
+          alt="Loading..."
+        />
+      );
+    }
     return (
       <div className="article_display">
         <section className="sortbuttons">
@@ -53,6 +62,10 @@ class Main extends Component {
                   Read More
                 </Link>
                 <br />
+                <p>Created on: {new Date(article.created_at).toUTCString()}</p>
+                <p>
+                  <i class="far fa-comments fa-lg" /> {article.comment_count}
+                </p>
                 <Voting
                   key="votes"
                   votes={article.votes}
@@ -68,13 +81,14 @@ class Main extends Component {
   }
 
   componentDidMount() {
+    this.setState({ isLoading: true });
     this.fetchArticles();
   }
 
   fetchArticles = () => {
     const { topic } = this.props;
     api.getArticles(topic).then(articles => {
-      this.setState({ articles });
+      this.setState({ articles, isLoading: false });
     });
   };
 
@@ -88,7 +102,14 @@ class Main extends Component {
     event.preventDefault();
     const { topic } = this.props;
     const sort_by = event.target.value;
-    api.getArticles(topic, sort_by).then(articles => {
+    const { order_by } = this.state;
+    if (order_by === "asc") {
+      this.setState({ order_by: "desc" });
+    } else {
+      this.setState({ order_by: "asc" });
+    }
+
+    api.getArticles(topic, sort_by, order_by).then(articles => {
       this.setState({ articles });
     });
   };

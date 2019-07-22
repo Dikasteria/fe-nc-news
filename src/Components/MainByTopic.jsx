@@ -43,7 +43,12 @@ class MainByTopic extends Component {
               <li key={article_id} className="article">
                 <h2>{article.title}</h2>
                 <p>{article.author}</p>
-                <Link to={`/articles/${article.article_id}`}>Read More</Link>
+                <Link
+                  className="artLink"
+                  to={`/articles/${article.article_id}`}
+                >
+                  Read More
+                </Link>
                 <Voting
                   key="votes"
                   votes={article.votes}

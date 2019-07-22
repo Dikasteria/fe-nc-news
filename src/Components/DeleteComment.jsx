@@ -6,9 +6,15 @@ class DeleteComment extends Component {
     user: "jessjelly"
   };
   render() {
+    const { author } = this.props;
     return (
       <div>
-        <button className="delButton" type="submit" onClick={this.handleClick}>
+        <button
+          className="delButton"
+          type="submit"
+          onClick={this.handleClick}
+          disabled={this.state.user !== author}
+        >
           Delete Comment
         </button>
       </div>

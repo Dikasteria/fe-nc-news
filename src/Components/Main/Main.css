@@ -35,9 +35,10 @@
 .article {
   background: var(--primary);
   box-shadow: var(--shadow);
-  display: grid;
+  display: inline-block;
   width: 28%;
-  border: solid 1px black;
+
+  /* border: solid 1px black; */
   background-color: #3399ff;
   margin: 10px;
   border-radius: 10px;
@@ -221,4 +222,13 @@
   cursor: pointer;
   margin: 5px;
   text-shadow: 2px 2px black;
+}
+
+img {
+  width: 600px;
+  height: 450px;
+  background: url("https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2015/05/InternetSlowdown_Day.gif")
+    50% no-repeat;
+  border: 1px solid black;
+  border-radius: 5px;
 }

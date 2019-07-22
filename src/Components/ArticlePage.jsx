@@ -17,13 +17,15 @@ class ArticlePage extends Component {
         <h2 className="articleTitle">{article.title}</h2>
         <p className="articleDetails">{article.body}</p>
         <p className="articleInfo">Votes: {article.votes}</p>
-        <p className="articleInfo">Comment Count: {article.comment_count}</p>
+        <p className="articleInfo">
+          <i class="far fa-comments fa-lg" />
+          {article.comment_count}
+        </p>
         <AddComment
           key="addComment"
           updateComments={this.updateComments}
           id={article.article_id}
         />
-
         <div className="comments">
           {comments.map(comment => {
             return (
@@ -40,6 +42,7 @@ class ArticlePage extends Component {
                 <DeleteComment
                   comment_id={comment.comment_id}
                   removeComment={this.removeComment}
+                  author={comment}
                 />
               </li>
             );

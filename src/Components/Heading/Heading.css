@@ -1,11 +1,9 @@
-@media only screen and (max-height: 600px) {
-}
 .Heading {
   grid-area: Heading;
   background-image: url("../../img/photo-1476242906366-d8eb64c2f661.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
+  height: 35vh;
   position: relative;
 }
 
@@ -13,6 +11,6 @@
   color: white;
   text-align: center;
   margin: 100px;
-  font-size: 5ex;
+  font-size: 8vh;
   text-shadow: 2px 2px grey;
 }
